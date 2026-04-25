@@ -9,7 +9,7 @@ app.use(express.json());
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
-app.post('/generate-roadmap', async (req, res) => {
+app.post('/api/generate-roadmap', async (req, res) => {
   try {
     const { education, interests, skills, careerGoal } = req.body;
 
@@ -85,6 +85,10 @@ app.post('/generate-roadmap', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+}
+
+module.exports = app;

@@ -24,7 +24,7 @@ function App() {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/generate-roadmap', {
+      const response = await fetch('/api/generate-roadmap', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
