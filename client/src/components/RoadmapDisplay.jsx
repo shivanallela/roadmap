@@ -109,7 +109,7 @@ const RoadmapDisplay = ({ roadmap, onCompare, onSimulate }) => {
 
             <div className="card-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <h3 className="card-title" style={{ color: 'var(--primary)' }}>{stage.level}</h3>
-              <span style={{ fontSize: '0.875rem', fontWeight: 500, backgroundColor: 'var(--bg-main)', padding: '0.25rem 0.75rem', borderRadius: '1rem', border: '1px solid var(--border)' }}>
+              <span style={{ fontSize: '0.875rem', fontWeight: 500, backgroundColor: 'var(--bg-glass)', padding: '0.25rem 0.75rem', borderRadius: '1rem', border: '1px solid var(--border)' }}>
                 {stage.duration}
               </span>
             </div>
@@ -127,7 +127,7 @@ const RoadmapDisplay = ({ roadmap, onCompare, onSimulate }) => {
                   <h4 style={{ fontSize: '1rem', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>Tools & Technologies</h4>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                     {stage.tools.map((tool, i) => (
-                      <span key={i} style={{ backgroundColor: 'var(--bg-secondary)', padding: '0.25rem 0.5rem', borderRadius: '0.25rem', fontSize: '0.875rem' }}>
+                      <span key={i} style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)', padding: '0.25rem 0.5rem', borderRadius: '0.25rem', fontSize: '0.875rem' }}>
                         {tool}
                       </span>
                     ))}
