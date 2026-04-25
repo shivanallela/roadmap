@@ -77,7 +77,7 @@ app.post('/api/generate-roadmap', async (req, res) => {
       ],
       model: "llama-3.3-70b-versatile",
       temperature: 0.5,
-      max_completion_tokens: 1024,
+      max_completion_tokens: 4096,
       response_format: { type: "json_object" },
     });
 

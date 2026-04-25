@@ -19,14 +19,19 @@ const CompareModal = ({ baseRoadmap, compareRoadmap, isCompareLoading, onClose, 
   return (
     <div style={{
       position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
-      backgroundColor: 'rgba(0,0,0,0.5)',
+      backgroundColor: 'rgba(0,0,0,0.75)',
       display: 'flex', alignItems: 'center', justifyContent: 'center',
-      zIndex: 50, padding: '2rem'
+      zIndex: 50, padding: '2rem',
+      backdropFilter: 'blur(4px)',
     }}>
-      <div className="card" style={{
+      <div style={{
         width: '100%', maxWidth: '1200px', height: '90vh',
         display: 'flex', flexDirection: 'column',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        backgroundColor: '#0a0f1e',
+        border: '1px solid rgba(255,255,255,0.12)',
+        borderRadius: '0.75rem',
+        boxShadow: '0 25px 50px rgba(0,0,0,0.8)',
       }}>
         <div className="card-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <h2 style={{ margin: 0 }}>Compare Career Paths</h2>
@@ -70,7 +75,7 @@ const CompareModal = ({ baseRoadmap, compareRoadmap, isCompareLoading, onClose, 
               <h3 style={{ color: 'var(--primary)', marginBottom: '1.5rem', textAlign: 'center' }}>{baseRoadmap.career}</h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 {baseRoadmap.stages.map((stage, idx) => (
-                  <div key={idx} className="card" style={{ boxShadow: 'var(--shadow-sm)' }}>
+                  <div key={idx} style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '0.5rem', overflow: 'hidden' }}>
                     <div className="card-header" style={{ padding: '1rem' }}>
                       <h4 style={{ margin: 0 }}>{stage.level}</h4>
                     </div>
@@ -93,7 +98,7 @@ const CompareModal = ({ baseRoadmap, compareRoadmap, isCompareLoading, onClose, 
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 {compareRoadmap.stages.map((stage, idx) => (
-                  <div key={idx} className="card" style={{ boxShadow: 'var(--shadow-sm)' }}>
+                  <div key={idx} style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '0.5rem', overflow: 'hidden' }}>
                     <div className="card-header" style={{ padding: '1rem' }}>
                       <h4 style={{ margin: 0 }}>{stage.level}</h4>
                     </div>
