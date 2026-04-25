@@ -26,11 +26,18 @@ app.post('/api/generate-roadmap', async (req, res) => {
       - Current Skills: ${skills || 'None'}
       
       Create a roadmap with 3 stages: Beginner, Intermediate, and Advanced.
+      Also include a "qualifications" section BEFORE the stages that describes the entry requirements for this career.
       
       You MUST respond ONLY with a valid, parsable JSON object, with no markdown formatting, no \`\`\`json wrappers, and no extra text.
       The JSON structure MUST exactly match this format:
       {
         "career": "${careerGoal}",
+        "qualifications": {
+          "education": "Minimum education requirement (e.g., B.Tech in CS, Any graduate, Self-taught accepted)",
+          "prerequisites": ["prerequisite1", "prerequisite2"],
+          "certifications": ["recommended cert 1", "recommended cert 2"],
+          "soft_skills": ["communication", "problem solving"]
+        },
         "stages": [
           {
             "level": "Beginner",

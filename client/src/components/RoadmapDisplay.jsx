@@ -48,6 +48,65 @@ const RoadmapDisplay = ({ roadmap, onCompare, onSimulate }) => {
         </div>
       </div>
 
+      {/* Qualifications Section */}
+      {roadmap.qualifications && (
+        <div className="card" style={{ marginBottom: '2rem', borderLeft: '4px solid var(--primary)' }}>
+          <div className="card-header">
+            <h3 className="card-title">📋 Qualifications Required</h3>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem', marginTop: '0.25rem' }}>
+              What you need before starting this career path
+            </p>
+          </div>
+          <div className="card-body">
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem' }}>
+
+              {roadmap.qualifications.education && (
+                <div>
+                  <h4 style={{ fontSize: '0.875rem', color: 'var(--primary)', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>🎓 Education</h4>
+                  <p style={{ color: 'var(--text-main)', fontSize: '0.9rem' }}>{roadmap.qualifications.education}</p>
+                </div>
+              )}
+
+              {roadmap.qualifications.prerequisites?.length > 0 && (
+                <div>
+                  <h4 style={{ fontSize: '0.875rem', color: 'var(--primary)', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>✅ Prerequisites</h4>
+                  <ul style={{ paddingLeft: '1.25rem', margin: 0 }}>
+                    {roadmap.qualifications.prerequisites.map((item, i) => (
+                      <li key={i} style={{ color: 'var(--text-main)', fontSize: '0.875rem', marginBottom: '0.25rem' }}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {roadmap.qualifications.certifications?.length > 0 && (
+                <div>
+                  <h4 style={{ fontSize: '0.875rem', color: 'var(--primary)', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>🏆 Certifications</h4>
+                  <ul style={{ paddingLeft: '1.25rem', margin: 0 }}>
+                    {roadmap.qualifications.certifications.map((cert, i) => (
+                      <li key={i} style={{ color: 'var(--text-main)', fontSize: '0.875rem', marginBottom: '0.25rem' }}>{cert}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {roadmap.qualifications.soft_skills?.length > 0 && (
+                <div>
+                  <h4 style={{ fontSize: '0.875rem', color: 'var(--primary)', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>🧠 Soft Skills</h4>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+                    {roadmap.qualifications.soft_skills.map((skill, i) => (
+                      <span key={i} style={{ backgroundColor: 'rgba(59, 130, 246, 0.15)', color: 'var(--primary-hover)', border: '1px solid rgba(59,130,246,0.3)', padding: '0.2rem 0.6rem', borderRadius: '1rem', fontSize: '0.8rem' }}>
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+            </div>
+          </div>
+        </div>
+      )}
+
       {isSimulating && (
         <div className="card" style={{ marginBottom: '2rem', backgroundColor: 'var(--primary-light)', borderColor: 'var(--primary)' }}>
           <div className="card-body">
